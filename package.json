@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "npm run build && vite preview"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",
