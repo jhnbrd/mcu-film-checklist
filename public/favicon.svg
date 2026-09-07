@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Radial glow for Arc Reactor core -->
+    <radialGradient id="reactorGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#f59e0b" />
+      <stop offset="70%" stop-color="#e62429" />
+      <stop offset="100%" stop-color="#7a0d10" />
+    </radialGradient>
+    <linearGradient id="shieldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e62429" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#e62429" />
+    </linearGradient>
+    <filter id="outerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Hexagon / Rounded Shield -->
+  <rect width="512" height="512" rx="112" fill="#0b0e14" />
+  <rect x="12" y="12" width="488" height="488" rx="100" fill="none" stroke="url(#shieldBorder)" stroke-width="8" opacity="0.6" />
+
+  <!-- Outer Reactor Ring -->
+  <circle cx="256" cy="256" r="190" fill="#161b22" stroke="#e62429" stroke-width="12" filter="url(#outerGlow)" />
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#30363d" stroke-width="4" stroke-dasharray="14 10" />
+
+  <!-- 8 Coil segments -->
+  <g stroke="#f59e0b" stroke-width="8" stroke-linecap="round" opacity="0.9">
+    <line x1="256" y1="96" x2="256" y2="140" />
+    <line x1="256" y1="372" x2="256" y2="416" />
+    <line x1="96" y1="256" x2="140" y2="256" />
+    <line x1="372" y1="256" x2="416" y2="256" />
+    <line x1="143" y1="143" x2="174" y2="174" />
+    <line x1="338" y1="338" x2="369" y2="369" />
+    <line x1="143" y1="369" x2="174" y2="338" />
+    <line x1="338" y1="174" x2="369" y2="143" />
+  </g>
+
+  <!-- Inner Silver/Gold Ring -->
+  <circle cx="256" cy="256" r="115" fill="#0f131a" stroke="#f59e0b" stroke-width="6" />
+  
+  <!-- Glowing Arc Core -->
+  <circle cx="256" cy="256" r="75" fill="url(#reactorGlow)" />
+
+  <!-- Center Core Triangle / Emblem -->
+  <polygon points="256,205 300,285 212,285" fill="#ffffff" opacity="0.95" />
+  <circle cx="256" cy="260" r="16" fill="#e62429" />
+</svg>
